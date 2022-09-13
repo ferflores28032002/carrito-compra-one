@@ -30,6 +30,19 @@ export const MostrarElementos = () => {
     });
   };
 
+  const aumentar = (element)=>{
+    dispatch({
+      Type: TypesActions.AUMENTAR,
+      payload: element,
+    });
+  }
+  const disminuir = (element)=>{
+    dispatch({
+      Type: TypesActions.DISMINUIR,
+      payload: element,
+    });
+  }
+
   return (
     <>
       <ul className={styles.container}>
@@ -55,7 +68,7 @@ export const MostrarElementos = () => {
             <h4>El carrito esta vacio</h4>
           ) : (
             state.map((states,i) => (
-              <CarritoElmentItems key={i} element={states} />
+              <CarritoElmentItems key={i} element={states} disminuir={disminuir} aumentar={aumentar} />
             ))
           )}
         </div>
