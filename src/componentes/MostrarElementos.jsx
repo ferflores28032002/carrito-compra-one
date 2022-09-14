@@ -6,6 +6,7 @@ import { TypesActions } from "../useReducers/TypesActions";
 import { useReducer } from "react";
 import { Reducers } from "../useReducers/Reducers";
 import { CarritoElmentItems } from "./CarritoElmentItems";
+import { Link } from "react-router-dom";
 
 export const MostrarElementos = () => {
   let initialState = [];
@@ -61,6 +62,7 @@ export const MostrarElementos = () => {
         <button className="btn btn-outline-danger" onClick={limpiar_carrito}>
           Vaciar carrito
         </button>
+       
 
         <button className="btn btn-primary">{state.length}</button>
         <div className={styles.container}>
